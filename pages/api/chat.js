@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   if (!messages || !Array.isArray(messages)) return res.status(400).json({ error: "messages required" });
   try {
     const response = await client.messages.create({
-      model: "claude-3-haiku-20240307",
+      model: "claude-haiku-4-5-20251001",
       max_tokens: 600,
       system: SYSTEM_PROMPT,
       messages,
