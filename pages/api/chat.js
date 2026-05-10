@@ -30,8 +30,11 @@ export default async function handler(req, res) {
       messages,
     });
     res.status(200).json({ text: response.content?.[0]?.text ?? "" });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
+  } } catch (err) {
+    console.error("Anthropic error:", err.status, err.message, JSON.stringify(err.error));
+    res.status(500).json({ 
+      error: err.message,
+      status: err.status,
+      detail: err.error
+    });
   }
-}
