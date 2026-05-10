@@ -138,7 +138,7 @@ export default function ShinkoChat() {
             <div ref={bottomRef} />
           </div>
           <div style={{ padding:"10px 14px", background:"rgba(255,255,255,0.75)", backdropFilter:"blur(12px)", borderTop:"0.5px solid rgba(0,0,0,0.08)", display:"flex", gap:"8px", alignItems:"center" }}>
-            <img src={FROG_GIF} alt="frog" style={{ width:"36px", height:"36px", flexShrink:0 }} />
+            <img src={FROG_GIF} alt="frog" style={{ width:"52px", height:"52px", flexShrink:0 }} />
             <input ref={inputRef} value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}}} placeholder="メッセージを入力..." style={{ flex:1, fontSize:"13.5px", padding:"8px 14px", borderRadius:"20px", border:"0.5px solid rgba(0,0,0,0.15)", background:"rgba(255,255,255,0.85)", outline:"none", fontFamily:"inherit" }} />
             <button className="shinko-send" onClick={()=>send()} disabled={loading||!input.trim()}>送信</button>
           </div>
